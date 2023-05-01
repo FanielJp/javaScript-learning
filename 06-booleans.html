@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+<body>
+  
+  <script>
+    true
+    false
+  console.log(3 < 5); 
+  console.log(3 > 6); 
+  //console.log(5 == '5.00'); not recommended
+  console.log(5 === '5.00'); 
+  console.log(3 > 5 - 5); 
+  /* comparison operator has lower priority in the order of operations; in this operation it's performed the math operation before the comparison;*/  
+
+  // BOOLEANS TYPE AND IF STATEMENTS
+  if(true){
+    console.log('hello'); 
+  }
+  if(false){
+    console.log('hi'); 
+  }
+  /*The way that if-statements works, is that if the boolean value is true the instructions inside de curly brackets will be performed;if the booleans value is false they wont be performed the instructions inside the curly brackets.
+  */
+
+  if (false){
+    console.log('hello'); 
+  }else{
+    console.log("I'm not happy today!")
+  }
+  /*The way that else works is if the boolean value(comparison operation) inside the round brackets is not true they 'll perform the instruction inside else.
+  */ 
+ 
+  //Practical EXample
+
+  const age = 15; 
+
+  if(age >= 16){
+    console.log('You can drive');
+    console.log('congrats'); 
+  }else if(age >= 14){
+    console.log('Almost there!')
+  }
+  else{
+    console.log("You can't drive"); 
+  }
+
+  //SYNTAX RULE IF STATEMENT 
+  /*
+  if(condition){
+    code to run if condition is true;  
+  }else {
+    code to run if condition is false; 
+  }
+  */
+
+  /*Logical operator
+  are typically used with Boolean(logical) values; when they are, they return a Boolean value. However the && and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value.
+   */
+    //comparison of two booleans values 
+    console.log(true && false); 
+    console.log(0.2 >= 0 && 0.2 < 1 / 3); 
+    console.log(true || false); 
+    console.log(!true); 
+    console.log(NaN && 9);
+    console.log(8 || 9)
+    console.log(!8); 
+
+
+
+
+  /*Truthy and Falsy Values   
+     If Statement don't just work with Booleans values like true and false. They actually work with any type of value including numbers and string; 
+  */
+
+  if (5){ //the number five behave just like true; 
+    console.log('truthy'); //it causes the if statement to run thi code , so five is a truthy value; 
+  }
+
+
+  if(0){// zero behave like false ; 
+    console.log('falsy'); // it cause the if statement to not run this line, so zero is a falsy value; 
+  }
+
+ /* javaScript falsy values 
+ false, 0, '', NaN, undefined, null ; Any value out of this list is a truthy value. 
+ 
+ /* Use of truthy and falsy */
+ 
+ const cartQuantity = 5;
+
+ if(cartQuantity){ // instead of if(cartQuantity > 0)
+  console.log('cart has products'); 
+ }
+
+ console.log(!0); 
+
+ //NaN : We get it if we do some invalid math like the code below
+console.log('text' / 5); // return NaN
+
+//undefined: represent that something doesn't have a value 
+let variable1 ; // THIS SYNTAX IS ONLY POSSIBLE WITH THE LET KEYWORD 
+console.log(variable1); // return undefined
+
+
+/* Ternary Operator -> ? : 
+a shortcut for 
+if(true){
+  console.log('truthu')
+}else{
+  console.log('falsy')
+}
+the ? represent the if and 
+: represent the else
+- can be saved in a variable
+*/
+
+const result = true ? 'truthy' : 'falsy' // true could be any truthy  or any falsy values; 
+console.log(result); 
+
+
+/*Guard operator &&
+earlier we learned the 
+AND operator &&
+value1 && value2
+
+- which checks if two side are both truthy; 
+- the and operator has a special feature 
+Let's say we have an and operator and the left side is false. 
+
+false && value1 
+in this situation we already know that 
+- it's impossible for both side for both side to be truthy 
+- doesn't even need to check the right side. 
+ this is called a Short-Circuit Evaluation;
+*/
+
+false && console.log('hello'); 
+/*the left side is falsy the && op stop early or short circuits and it doesn't even run the code on right, so this means that we can use the value on the left to block o guard the code on the right. 
+So when we use the AND OPERATOR like this we call it the GUARD OPERATOR &&
+A SHORTCUT FOR 
+if(condition){
+  console.log('hello'); 
+} 
+- can be saved in a variable
+*/  
+const message1 = false && console.log('hello'); 
+console.log(false);  
+
+const message2 = 4 && 'hello';
+console.log(message2);  
+
+
+/* THE DEFAULT OPERATOR -> ||
+- Is similar to the GUARD OPERATOR
+Earlier we learned the OR operator which checks if
+- at least one side is truthy 
+Let's imagine we have an OR operator and the left side is 
+true in this  situation we already know the result of the OR 
+operator because the left side is true already truthy.
+- we don't even need to checks the right side.
+- So the OR operator also stop early or sort circuits. 
+if the first value is truthy
+*/
+
+// Let say in our amazon project we can choose a currency to pay for our order.
+
+const currency1 = 'EUR' || 'USD'; // the the left side is truthy , the OR operator we'll stope early; 
+console.log(currency1); //and they we'll result in the value on the left;  
+// Now  let's say that choosing a currency is optional . if we don't choose a current we'll use a default value; 
+const currency2 = undefined || 'USD' ; 
+/* Now the left side is falsy , the OR operator doesn't short circut. it'll continue and the result will
+be the right side*/
+console.log(currency2); 
+/* As we can see, we can use de OR operator to set default value. 
+So when we use the default operator like this, it's called a 
+DEFAULT OPERATOR
+- It's a short of an if statement like 
+ let currency2; 
+ if(!condition){
+  currency2 = 'USD'
+ }
+ */
+
+  </script>
+</body>
+</html>

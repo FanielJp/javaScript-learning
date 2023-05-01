@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Variable</title>
+</head>
+<body>
+  <script>
+    let variable1; 
+    variable1 = 3; 
+    console.log(variable1);
+    /* let create a new variable name variable1 
+    assigning a value to a variable 
+    when created a variable with let we can re-assign it ; 
+    */
+    const calculation = 2 + 2; 
+    console.log(calculation); 
+    console.log(calculation + 2);
+    /* with const we create variables that we don't have to 
+    change later
+    */
+    const result = calculation + 2 ; 
+    console.log(result); 
+
+    const message = 'hello'; 
+    console.log(message); 
+
+    variable1 = 5; // re-assigning a value to a variable
+    console.log(variable1); 
+
+    variable1 = variable1 + 1; //increase the value of variable1 by 1 
+    console.log(variable1)
+
+
+    const variable2 = 3; 
+
+    var variable3 = 3;
+    /* Create a variable just like let 
+    This variable can be change later 
+    Is the original way to create a variables
+    in javaScript, however it's not recommended
+    to use var in modern javaScript code.  
+    */ 
+
+    // typeof with variable 
+
+    console.log(typeof variable3); 
+    console.log(typeof message); 
+  </script>
+</body>
+
+</html>
