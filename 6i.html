@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coin-flip game </title>
+</head>
+<body>
+  <script>
+    const randomNumber = Math.random();
+
+    let computerGuess= randomNumber < 0.5 ? 'heads': 'tails'; 
+    console.log(computerGuess); 
+
+    let humanGuess = 'tails'; 
+    let result = humanGuess === computerGuess ? 'You Win!' : 'You lose!'; 
+    console.log(result) 
+  </script>
+   
+
+</body>
+</html>
